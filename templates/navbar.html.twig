@@ -1,0 +1,36 @@
+{% import 'links.html.twig' as Links %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">{{ 'APP.NAME'|trans }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {{ Links.link('homepage', 'NAV.HOME') }}
+            {{ Links.link('term_of_service', 'NAV.TERMS') }}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {{ Links.link('add_picture', 'NAV.ADD_PICTURE') }}
+            {% endif %}
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <p class="nav-link">
+                        {{ 'NAV.LOGGED_AS'|trans({'%name%' : app.user.username}) }}
+                    </p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">
+                        {{ 'NAV.LOGOUT'|trans }}
+                    </a>
+                </li>
+            {% else %}
+                {{ Links.link('app_login', 'NAV.LOGIN') }}
+                {{ Links.link('app_register', 'NAV.REGISTER') }}
+            {% endif %}
+        </ul>
+    </div>
+</nav>

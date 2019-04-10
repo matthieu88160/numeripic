@@ -1,0 +1,58 @@
+HOME:
+    ITEM_COUNT:     'Total pictures count : '
+APP:
+    NAME:           'Numeripic'
+NAV:
+    HOME:           'Home'
+    TERMS:          'Terms'
+    LOGIN:          'Login'
+    REGISTER:       'Register'
+    LOGOUT:         'Logout'
+    LOGGED_AS:      'Logged as %name%'
+    ADD_PICTURE:    'New picture'
+LOGIN:
+    INFO:           'Please sign in'
+    USERNAME:
+        LABEL:      'Username'
+    PASSWORD:
+        LABEL:      'Password'
+    SUBMIT:         'Sign in'
+FORM:
+    USER:
+        TOS:
+            LABEL:  'Accept term of services'
+        EMAIL:
+            LABEL:  'Email'
+        PASSWORD:
+            LABEL2: 'Repeat your password'
+            LABEL:  'Password'
+        USERNAME:
+            LABEL:  'Username'
+        SUBMIT:
+            LABEL:  'Submit'
+    PICTURE:
+        TITLE:
+            LABEL:  'Title'
+        DESCRIPTION:
+            LABEL:  'Description [optional]'
+        TAGS:
+            LABEL:  'Tags'
+        FILE:
+            LABEL:  'Choose a picture'
+        SUBMIT:
+            LABEL:  'Submit'
+MAIL:
+    REGISTER:
+        TITLE:          'Activate your account'
+        INFO:           'Hi %name%, your account was successfully created on Numeripic, just one more step to activate !!'
+        HTML:
+            LINK:
+                INFO:   'Please click'
+                LABEL:  'on this link'
+        TXT:
+            LINK:
+                INFO:   'Please copy past this link in your browser :'
+REGISTRATION:
+    ACTIVATION:
+        TITLE:          'Numeripic - activation needed'
+        INFO:           'Your account was created, please check your email account to activate ❤️️'

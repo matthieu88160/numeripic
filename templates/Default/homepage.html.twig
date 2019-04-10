@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Home{% endblock %}
+
+{% block body %}
+
+    <div class="row mt-2">
+    {% for picture in pictures %}
+        <div class="card col-3 mx-2">
+
+            <img
+                src="{{ path('get_picture_content', {'picture': picture.getId()}) }}"
+                class="card-img-top"
+                alt="{{ picture.getTitle() }}"
+            >
+
+            <div class="card-body">
+                <h5 class="card-title">{{ picture.getTitle() }}</h5>
+                <p class="card-text">{{ picture.getDescription() }}</p>
+                <p class="card-text"><small class="text-muted">{{ picture.getSharer().getUsername() }}</small></p>
+                <p>
+                    {% for tag in picture.getTags() %}
+                        <span class="badge badge-primary">{{ tag.getLabel() }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+    <div class="count my-4">
+        {{ 'HOME.ITEM_COUNT'|trans }}{{ pictures.getTotalItemCount }}
+    </div>
+    <div class="navigation">
+        {{ knp_pagination_render(pictures) }}
+    </div>
+
+{% endblock %}
